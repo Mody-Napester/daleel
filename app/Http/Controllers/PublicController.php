@@ -7,6 +7,8 @@ use App\Models\Contact;
 use App\Models\Home;
 use App\Models\Message;
 use App\Models\Quotation;
+use App\Models\Resource;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
@@ -39,6 +41,41 @@ class PublicController extends Controller
     }
 
     /**
+     * Show service
+     */
+    public function show_service($id)
+    {
+        $data['service'] = Service::where('id', $id)->first();
+        if($data['service']){
+            return view('@public.service.show', $data);
+        }else{
+            return redirect('/');
+        }
+    }
+
+    /**
+     * Resource
+     */
+    public function index_resource()
+    {
+        $data['resources'] = '';
+        return view('@public.resource.index');
+    }
+
+    /**
+     * Show service
+     */
+    public function show_resource($id)
+    {
+        $data['resource'] = Resource::where('id', $id)->first();
+        if($data['resource']){
+            return view('@public.resource.show', $data);
+        }else{
+            return redirect('/');
+        }
+    }
+
+    /**
      * Client
      */
     public function index_client()
@@ -63,53 +100,30 @@ class PublicController extends Controller
     {
         // Validation
         $rules = [
+//            'bname' => 'required',
             'name' => 'required',
             'email' => 'required',
-            'phone' => 'required',
-            's_lang' => 'required',
-            'volume' => 'required',
-            'field' => 'required',
-//            'sample' => 'required',
-            't_lang' => 'required',
 //            'comments' => 'required',
         ];
 
         $request->validate($rules);
 
-        if($request->hasFile('sample')){
-            $upload = upload_file('image_and_text', $request->file('sample'), 'assets/images/quotation');
-            if ($upload['status'] == true){
-                $sample = $upload['filename'];
-            }else{
-                $sample = '';
-            }
-        }else{
-            $sample = '';
-        }
-
         $resource = Quotation::create([
+            'bname' => $request->bname,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            's_lang' => $request->s_lang,
-            't_lang' => $request->t_lang,
-            'volume' => $request->volume,
-            'field' => $request->field,
-            'sample' => $sample,
             'comments' => ($request->has('comments'))? $request->comments : '',
         ]);
 
         // Send Emails
-        $bName = "<b>Business Name : </b>" . $request->name . "<br>";
+        $bName = "<b>Business Name : </b>" . $request->bname . "<br>";
+        $name = "<b>Name : </b>" . $request->name . "<br>";
         $email = "<b>Email : </b>" . $request->email . "<br>";
         $phone = "<b>Phone : </b>" .$request->phone . "<br>";
-        $sLang = "<b>Source Language : </b> : " . $request->s_lang . "<br>";
-        $tLang = "<b>Target Language : </b> : " . $request->t_lang . "<br>";
-        $expert = "<b>Volume : </b> : " . $request->volume . "<br>";
-        $field = "<b>Field of translation : </b> : " . $request->field . "<br>";
         $comments = "<b>Comments : </b> : " . ($request->has('comments'))? $request->comments : '' . "<br>";
 
-        $mail = $bName . $email . $phone. $sLang . $tLang . $expert . $field . $comments;
+        $mail = $bName . $name . $email . $phone . $comments;
 
         // Always set content-type when sending HTML email
         $headers = "MIME-Version: 1.0" . "\r\n";

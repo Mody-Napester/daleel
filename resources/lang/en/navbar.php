@@ -7,5 +7,6 @@ return array (
   'Contact' => 'Contact',
   'Home' => 'Home',
   'Quotation' => 'Request a Consult',
-  'Services' => 'Services',
+  'Services' => 'Solutions',
+  'Resources' => 'Resources',
 );

@@ -8,4 +8,5 @@ return array (
   'Quotation' => 'طلب استشارة',
   'Careers' => 'الوظائف',
   'Contact' => 'تواصل معنا',
+  'Resources' => 'مصادر',
 );

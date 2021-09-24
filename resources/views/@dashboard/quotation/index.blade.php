@@ -23,14 +23,10 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>B.Name</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>S. lang</th>
-                            <th>T. lang</th>
-                            <th>Volume</th>
-                            <th>Field</th>
-                            <th>Sample</th>
                             <th>Comments</th>
                             <th>Created at</th>
                         </tr>
@@ -39,18 +35,10 @@
                     <tbody>
                         @foreach($resources as $resource)
                             <tr>
+                                <td>{{ $resource->bname }}</td>
                                 <td>{{ $resource->name }}</td>
                                 <td>{{ $resource->email }}</td>
                                 <td>{{ $resource->phone }}</td>
-                                <td>{{ $resource->s_lang }}</td>
-                                <td>{{ $resource->t_lang }}</td>
-                                <td>{{ $resource->volume }}</td>
-                                <td>{{ $resource->field }}</td>
-                                <td>
-                                    @if($resource->sample != '')
-                                        <a class="btn btn-sm btn-primary" href="{{ url('assets/images/quotation/'. $resource->sample) }}"><i class="fa fa-fw fa-download"></i></a>
-                                    @endif
-                                </td>
                                 <td>{{ $resource->comments }}</td>
                                 <td>{{ $resource->created_at }}</td>
                             </tr>

@@ -5,8 +5,10 @@ use \App\Http\Controllers\LanguagesController;
 use \App\Http\Controllers\PublicController;
 use \App\Http\Controllers\DashboardController;
 use \App\Http\Controllers\ServiceController;
+use \App\Http\Controllers\ResourceController;
 use \App\Http\Controllers\TestimonialsController;
 use \App\Http\Controllers\ClientController;
+use \App\Http\Controllers\PartnerController;
 use \App\Http\Controllers\QuotationController;
 use \App\Http\Controllers\ContactController;
 use \App\Http\Controllers\MessageController;
@@ -18,8 +20,15 @@ Route::get('language/{language}', [LanguagesController::class, 'setLanguage'])->
 
 // Public pages
 Route::get('/', [PublicController::class, 'index_home'])->name('public.home.index');
+
 Route::get('about-us', [PublicController::class, 'index_about'])->name('public.about.index');
+
 Route::get('services', [PublicController::class, 'index_service'])->name('public.service.index');
+Route::get('services/{id}', [PublicController::class, 'show_service'])->name('public.service.show');
+
+Route::get('resource', [PublicController::class, 'index_resource'])->name('public.resource.index');
+Route::get('resource/{id}', [PublicController::class, 'show_resource'])->name('public.resource.show');
+
 Route::get('clients', [PublicController::class, 'index_client'])->name('public.client.index');
 
 Route::get('quotation', [PublicController::class, 'index_quotation'])->name('public.quotation.index');
@@ -39,8 +48,14 @@ Route::group(['prefix'=>'dashboard', 'middleware'=>'auth'], function (){
     Route::resource('service', ServiceController::class);
     Route::get('service/destroy/{service}', [ServiceController::class, 'destroy'])->name('dashboard.service.destroy');
 
+    Route::resource('resource', ResourceController::class);
+    Route::get('resource/destroy/{resource}', [ResourceController::class, 'destroy'])->name('dashboard.resource.destroy');
+
     Route::resource('client', ClientController::class);
     Route::get('client/destroy/{client}', [ClientController::class, 'destroy'])->name('dashboard.client.destroy');
+
+    Route::resource('partner', PartnerController::class);
+    Route::get('partner/destroy/{client}', [PartnerController::class, 'destroy'])->name('dashboard.partner.destroy');
 
     Route::resource('testimonial', TestimonialsController::class);
     Route::get('testimonial/destroy/{testimonial}', [TestimonialsController::class, 'destroy'])->name('dashboard.testimonial.destroy');

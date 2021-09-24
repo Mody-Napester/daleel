@@ -29,6 +29,13 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('partner.index') }}">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Partners</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('testimonial.index') }}">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Testimonials</span>
@@ -70,8 +77,15 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('resource.index') }}">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Resources</span>
+            </a>
+        </li>
 
-{{--        <li class="nav-item nav-category">UI Elements</li>--}}
+
+        {{--        <li class="nav-item nav-category">UI Elements</li>--}}
 {{--        <li class="nav-item">--}}
 {{--            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">--}}
 {{--                <i class="menu-icon mdi mdi-floor-plan"></i>--}}

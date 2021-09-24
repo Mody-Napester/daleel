@@ -11008,7 +11008,8 @@ a.text-dark:focus {
 
 :root {
   --theme-color: #e40000;
-  --primary-color: #0abde3;
+  --primary-color: #CD0612;
+  /*--primary-color: #0275AF;*/
   --secondary-color: #d83030;
   --font-color: #707070;
   --bg-color: #fff;
@@ -12427,7 +12428,8 @@ h3.title-main:after {
   right: 0;
   display: flex;
   align-items: center;
-  background: rgb(51 51 51 / 32%);
+  background: rgba(0, 0, 0, 0.6);;
+  /*background: rgb(51 51 51 / 32%);*/
 }
 
 .banner-19 .main-content {

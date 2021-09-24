@@ -343,6 +343,9 @@
                     <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item @if(url()->current() == route('public.service.index')) active @endif">
                         <a href="{{ route('public.service.index') }}" class="nav-link @if(url()->current() == route('public.service.index')) active @endif">{{ trans('navbar.Services') }}</a>
                     </li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item @if(url()->current() == route('public.resource.index')) active @endif">
+                        <a href="{{ route('public.resource.index') }}" class="nav-link @if(url()->current() == route('public.resource.index')) active @endif">{{ trans('navbar.Resources') }}</a>
+                    </li>
                     <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item @if(url()->current() == route('public.client.index')) active @endif">
                         <a href="{{ route('public.client.index') }}" class="nav-link @if(url()->current() == route('public.client.index')) active @endif">{{ trans('navbar.Clients') }}</a>
                     </li>
@@ -457,6 +460,9 @@
                             <a href="{{ route('public.service.index') }}">{{ trans('navbar.Services') }}</a>
                         </li>
                         <li class="cat-item cat-item-2">
+                            <a href="{{ route('public.resource.index') }}">{{ trans('navbar.Resources') }}</a>
+                        </li>
+                        <li class="cat-item cat-item-2">
                             <a href="{{ route('public.client.index') }}">{{ trans('navbar.Clients') }}</a>
                         </li>
                         <li class="cat-item cat-item-2">
@@ -493,7 +499,7 @@
                 <div class="col-md-4 footer-contact d-flex align-items-center">
                     <span class="fas fa-envelope-open" aria-hidden="true"></span>
                     <div>
-                        <a href="mailto:info@example.com">Daleel@Daleel.com.eg</a>
+                        <a href="mailto:{{ trans('master.email_email.com') }}">{{ trans('master.email_email.com') }}</a>
                         <p>{{ trans('master.Drop_Us_a_Line') }}</p>
                     </div>
                 </div>
@@ -501,7 +507,7 @@
                 <div class="col-md-4 footer-contact d-flex align-items-center active">
                     <span class="fas fa-phone-alt" aria-hidden="true"></span>
                     <div>
-                        <a href="tel:+44-000-888-999">+2 010 69977924</a>
+                        <a href="tel:{{ trans('master.phone_number_010') }}">{{ trans('master.phone_number_010') }}</a>
                         <p>{{ trans('master.Call_Us_Now') }}</p>
                     </div>
                 </div>
@@ -509,8 +515,8 @@
                 <div class="col-md-4 footer-contact d-flex align-items-center">
                     <span class="fas fa-map-marker-alt" aria-hidden="true"></span>
                     <div>
-                        <h5>Villa 143 G - South of Academy</h5>
-                        <p>5th settlement - The third floor.</p>
+                        <h5>{{ trans('master.address_text_1') }}</h5>
+                        <p>{{ trans('master.address_text_2') }}</p>
                     </div>
                 </div>
 

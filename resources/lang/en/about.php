@@ -2,7 +2,7 @@
 
 return array (
   'About_us' => 'About us',
-  'About_us_text1' => 'Alboraq Translation Services',
-  'About_us_text2' => 'ABTS was founded in 2010, Despite the fact that we are a newly established office but we managed to grow rapidly and to have a very distinguished clients\' list who are greatly satisfied to work with us due to our high quality translation, accuracy, commitment to deadlines and excellent customer service skills.',
-  'About_us_text3' => 'Localization - Scriptwriting - Staffing - Outsourcing - Translation - Simultaneous',
+  'About_us_text1' => 'Daleel Solutions',
+  'About_us_text2' => 'Daleel innovate, prepare and provide adaptable, user-friendly, profitable and all-inclusive solutions to present and future requirements in the digital marketing industry.',
+  'About_us_text3' => 'Daleel is digital marketing agency which provides multiple advanced marketing solutions',
 );

@@ -44,51 +44,25 @@
                     @csrf
 
                     <div class="row main-cont-sec">
-                        <div class="col-md-4 left-cont-contact">
+                        <div class="col-md-6 left-cont-contact">
                             <div class="form-group mb-3">
-                                <label for="name">{{ trans('quotation.Business_Name') }}</label>
+                                <label for="bname">{{ trans('quotation.Business_Name') }}</label>
+                                <input class="form-control" type="text" name="bname" id="bname" placeholder="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="name">{{ trans('quotation.Name') }} <span class="required">*</span></label>
                                 <input class="form-control" type="text" name="name" id="name" placeholder="" required="">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="email">{{ trans('quotation.Email') }}</label>
+                                <label for="email">{{ trans('quotation.Email') }} <span class="required">*</span></label>
                                 <input class="form-control" type="email" name="email" id="email" placeholder="" required="">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="phone">{{ trans('quotation.Phone') }}</label>
-                                <input class="form-control" type="text" name="phone" id="phone" placeholder="" required="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="s_lang">{{ trans('quotation.Source_Language') }}</label>
-                                <select class="select2" name="s_lang" id="s_lang" style="width: 100%;">
-                                    @foreach(\Illuminate\Support\Facades\DB::table('languages')->get() as $language)
-                                        <option value="{{ $language->iso_639_1  }}">{{ $language->name }}</option>
-                                    @endforeach
-                                </select>
+                                <input class="form-control" type="text" name="phone" id="phone" placeholder="">
                             </div>
                         </div>
-                        <div class="col-md-4 left-cont-contact">
-                            <div class="form-group mb-3">
-                                <label for="volume">{{ trans('quotation.Expected_Volume') }}</label>
-                                <input class="form-control" type="text" name="volume" id="volume" placeholder="" required="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="field">{{ trans('quotation.Field_of_translation') }}</label>
-                                <input class="form-control" type="text" name="field" id="field" placeholder="" required="">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="sample">{{ trans('quotation.Attach_a_sample') }} (png,jpg,pdf,dox,docx)</label>
-                                <input class="form-control" type="file" name="sample" id="sample" accept=".doc,.docx,.png,.jpg,.pdf">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="t_lang">{{ trans('quotation.Target_Language') }}</label>
-                                <select class="select2" name="t_lang" id="t_lang" style="width: 100%;">
-                                    @foreach(\Illuminate\Support\Facades\DB::table('languages')->get() as $language)
-                                        <option value="{{ $language->iso_639_1  }}">{{ $language->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4 right-cont-contact">
+                        <div class="col-md-6 right-cont-contact">
                             <div class="form-group">
                                 <label for="comments">{{ trans('quotation.Write_Message') }}</label>
                                 <textarea class="form-control" name="comments" id="comments" placeholder=""></textarea>

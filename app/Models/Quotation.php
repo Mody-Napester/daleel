@@ -15,14 +15,10 @@ class Quotation extends Model
      * @var array
      */
     protected $fillable = [
+        'bname',
         'name',
         'email',
         'phone',
-        's_lang',
-        't_lang',
-        'volume',
-        'field',
-        'sample',
         'comments',
     ];
 
