@@ -8,7 +8,7 @@
 <section class="inner-banner">
     <style>
         .inner-banner {
-            background-image: url({{ url('assets/wp-content/themes/execution/assets/images/about-banner.jpg') }});
+            background-image: url({{ url('assets/images/media/' . site_file('about_page_banner')['file'] ) }});
         }
     </style>
     <div class="w3l-breadcrumb py-5 dsk-rt">
@@ -30,16 +30,16 @@
             <div class="row top-cont-grid align-items-center">
 
                 <div class="col-lg-6 left-img pr-lg-4 order-lg-first order-last">
-                    <img src="{{ url('assets/wp-content/themes/execution/assets/images/about1.jpg') }}"
-                         alt="" class="img-responsive img-fluid" />
+                    <img src="{{ url('assets/images/media/' . site_file('about_page_image_1')['file'] ) }}"
+                         alt="{{ site_file('about_page_image_1')['title'] }}" class="img-responsive img-fluid" />
                     <div class="row mt-3">
                         <div class="col-6 img-pad pr-2">
-                            <img src="{{ url('assets/wp-content/themes/execution/assets/images/about2.jpg') }}"
-                                 alt="" class="img-responsive img-fluid" />
+                            <img src="{{ url('assets/images/media/' . site_file('about_page_image_2')['file'] ) }}"
+                                 alt="{{ site_file('about_page_image_2')['title'] }}" class="img-responsive img-fluid" />
                         </div>
                         <div class="col-6 img-pad-2 pl-2">
-                            <img src="{{ url('assets/wp-content/themes/execution/assets/images/about3.jpg') }}"
-                                 alt="" class="img-responsive img-fluid" />
+                            <img src="{{ url('assets/images/media/' . site_file('about_page_image_3')['file'] ) }}"
+                                 alt="{{ site_file('about_page_image_3')['title'] }}" class="img-responsive img-fluid" />
                         </div>
                     </div>
                 </div>

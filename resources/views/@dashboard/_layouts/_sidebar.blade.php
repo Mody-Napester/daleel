@@ -15,6 +15,20 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('media.index') }}">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Media</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('dashboard.site_file.edit') }}">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Site Files</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('service.index') }}">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Services</span>

@@ -1,7 +1,7 @@
 <section class="w3l-content-mid py-5">
     <style>
         .w3l-content-mid {
-            background-image: url({{ url('assets/wp-content/themes/execution/assets/images/bg3.jpg') }});
+            background-image: url({{ url('assets/images/media/' . site_file('call_to_action')['file'] ) }});
         }
     </style>
     <div class="container py-md-5 py-4 LandingPageCover dsk-rt">

@@ -8,7 +8,7 @@
     <section class="banner-19">
         <div class="banner-layer">
             <video autoplay muted loop id="myVideo">
-                <source src="{{ url('assets/wp-content/themes/execution/assets/videos/video2.mp4') }}" type="video/mp4">
+                <source src="{{ url('assets/images/media/' . site_file('home_video')['file'] ) }}" type="video/mp4">
                 {{ trans('home.Your_browser_does_not_support_HTML5_video') }}
             </video>
 
@@ -34,7 +34,7 @@
         <div class="container py-md-5 py-sm-4 HomePageAbout">
             <div class="row">
                 <div class="col-lg-6 left-wthree-img mb-lg-0 mb-4">
-                    <img class="img-fluid img-responsive" src="{{ url('assets/wp-content/themes/execution/assets/images/about.jpg') }}" alt=" ">
+                    <img class="img-fluid img-responsive" src="{{ url('assets/images/media/' . site_file('home_section_1')['file'] ) }}" alt="{{ site_file('home_section_1')['title'] }}">
                 </div>
                 <div class="col-lg-6 about-right-faq align-self pl-lg-5">
                     <h3 class="title-style">{{ trans('home.Home_2nd_section_title') }}!</h3>
@@ -91,7 +91,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 content-image order-lg-first order-last">
                     <a href="#image">
-                        <img src="{{ url('assets/wp-content/themes/execution/assets/images/img2.jpg') }}" class="img-responsive" alt="content-photo">
+                        <img src="{{ url('assets/images/media/' . site_file('home_section_2')['file'] ) }}" alt="{{ site_file('home_section_1')['title'] }}" class="img-responsive" alt="content-photo">
                     </a>
                 </div>
                 <div class="col-lg-6 col-md-10 mx-auto content-right mb-lg-0 mb-5 pl-lg-5 order-lg-last order-first dsk-txt-rt">

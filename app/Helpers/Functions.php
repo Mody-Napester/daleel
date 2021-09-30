@@ -93,6 +93,16 @@ function human_date($date){
     return Carbon\Carbon::createFromTimeStamp(strtotime($date))->diffForHumans();
 }
 
+// Get Media Site File
+function site_file($file_name){
+    $file = \App\Models\SiteImage::where('name', $file_name)->first();
+    if($file){
+        return $file;
+    }else{
+        return ['name' => '', 'title' => '', 'file' => ''];
+    }
+}
+
 // User points
 function user_points($user_id){
     $user = \App\Models\User::where('id', $user_id)->first();
@@ -186,6 +196,11 @@ function upload_file($type, $file, $path){
     }
     elseif ($type == 'image_and_text'){
         $validExtentions = ['txt', 'doc', 'pdf', 'jpg', 'png'];
+    }
+    elseif ($type == 'video'){
+        $validExtentions = ['mp4'];
+    }else{
+        $validExtentions = [];
     }
 
     if (in_array($extention, $validExtentions)) {

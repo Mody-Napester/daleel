@@ -14,6 +14,8 @@ use \App\Http\Controllers\ContactController;
 use \App\Http\Controllers\MessageController;
 use \App\Http\Controllers\ApplicantController;
 use \App\Http\Controllers\TeamController;
+use \App\Http\Controllers\MediaController;
+use \App\Http\Controllers\SiteImageController;
 
 // Site Languages
 Route::get('language/{language}', [LanguagesController::class, 'setLanguage'])->name('language');
@@ -45,6 +47,8 @@ Route::group(['prefix'=>'dashboard', 'middleware'=>'auth'], function (){
     Route::get('/', function (){ return redirect(route('dashboard.home.index')); })->name('dashboard.main.index');
     Route::get('/home', [DashboardController::class, 'index'])->name('dashboard.home.index');
 
+    Route::resource('media', MediaController::class);
+
     Route::resource('service', ServiceController::class);
     Route::get('service/destroy/{service}', [ServiceController::class, 'destroy'])->name('dashboard.service.destroy');
 
@@ -63,8 +67,11 @@ Route::group(['prefix'=>'dashboard', 'middleware'=>'auth'], function (){
     Route::resource('team', TeamController::class);
     Route::get('team/destroy/{team}', [TeamController::class, 'destroy'])->name('dashboard.team.destroy');
 
-    Route::get('contact/edit', [ContactController::class, 'edit'])->name('dashboard.contact.edit');
+    Route::get('contact', [ContactController::class, 'edit'])->name('dashboard.contact.edit');
     Route::put('contact/update/{contact}', [ContactController::class, 'update'])->name('dashboard.contact.update');
+
+    Route::get('site_file', [SiteImageController::class, 'edit'])->name('dashboard.site_file.edit');
+    Route::post('site_file/update/{site_file}', [SiteImageController::class, 'update'])->name('dashboard.site_file.update');
 
     Route::get('quotation', [QuotationController::class, 'index'])->name('dashboard.quotation.index');
     Route::get('message', [MessageController::class, 'index'])->name('dashboard.message.index');

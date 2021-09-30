@@ -142,7 +142,7 @@ class ClientController extends Controller
         if(!$data['resource']){
             return redirect()->back()->with('message',[
                 'type'=>'danger',
-                'text'=>'Sorry! page not exists.'
+                'text'=>'Sorry! not exists.'
             ]);
         }
 

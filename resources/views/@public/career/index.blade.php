@@ -8,7 +8,7 @@
     <section class="inner-banner">
         <style>
             .inner-banner {
-                background-image: url({{ url('assets/wp-content/themes/execution/assets/images/career-banner.jpg') }});
+                background-image: url({{ url('assets/images/media/' . site_file('careers_page_banner')['file'] ) }});
             }
         </style>
         <div class="w3l-breadcrumb py-5 dsk-rt">

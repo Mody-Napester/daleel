@@ -87,6 +87,12 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
+            @if(session()->has('message'))
+                <div class="alert alert-{{ session('message')['type'] }} alert-dismissible fade show" role="alert">
+                    {{ session('message')['text'] }}
+                </div>
+            @endif
+
           @yield('content')
         </div>
         <!-- content-wrapper ends -->
